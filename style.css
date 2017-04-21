@@ -56,7 +56,8 @@ template: bb-theme
 }
 
 .wpas-search-field {
-        padding-left: 15px;
+        /* padding-left: 15px; add this setting to larger screens only. */
+        padding-bottom: 15px;
 }
 
 /* ======== Custom Search Dropdown ======== */
