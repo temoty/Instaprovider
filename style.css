@@ -33,22 +33,15 @@ template: bb-theme
     justify-content: center;
 }
 
-@media (min-width:768px) {
-    .provider-result {
-	padding: .5em;
-	flex-wrap: nowrap;
-    }
-    .provider-result-video {
-        display: flex;
-        justify-content: center;
-    }
-}
+
 
 .provider-result-excerpt {
     overflow: auto;
     word-wrap: break-word;
 }
 
+
+/* ======== End of Custom Styles ========* /
 
 /* ======== WP Advanced Search ========= */
 
@@ -150,3 +143,19 @@ template: bb-theme
     }
 
 }
+
+
+/* ========= Custom Media Queries - Responsive Design ========= */
+
+@media (min-width:768px) {
+    .provider-result {
+	padding: .5em;
+	flex-wrap: nowrap;
+    }
+    .provider-result-video {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
