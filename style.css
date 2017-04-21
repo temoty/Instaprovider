@@ -1,0 +1,152 @@
+/*
+Theme Name: Beaver Builder Child Theme
+Theme URI: http://www.wpbeaverbuilder.com
+Version: 1.0
+Description: An example child theme that can be used as a starting point for custom development.
+Author: The Beaver Builder Team
+Author URI: http://www.fastlinemedia.com
+template: bb-theme
+*/
+
+/* Add your custom styles here... */ 
+
+
+/* This gets rid of little search magnifying glasses on pages */
+.fa-search:before {
+	display: none;
+}
+
+/* This is even up the columns on search results page */
+.col-md-4 iframe {
+    /* margin-top: 15px; */
+}
+
+.provider-result {
+    margin-bottom: 1.5em;
+    background: #444;
+    padding: 1.5em .5em;
+    border: 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width:768px) {
+    .provider-result {
+	padding: .5em;
+	flex-wrap: nowrap;
+    }
+    .provider-result-video {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.provider-result-excerpt {
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+
+/* ======== WP Advanced Search ========= */
+
+.wp-advanced-search {
+	padding: 3%;
+	margin-bottom: 30px;
+}
+
+.results-count {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.wpas-search-field {
+        padding-left: 15px;
+}
+
+/* ======== Custom Search Dropdown ======== */
+
+.custom-dropdown--large {
+    font-size: 1.5em;
+}
+
+.custom-dropdown--small {
+    font-size: .7em;
+}
+
+.custom-dropdown__select{
+    font-size: inherit; /* inherit size from .custom-dropdown */
+    padding: .5em; /* add some space*/
+    margin: 0; /* remove default margins */
+}
+
+.custom-dropdown__select--blue {
+    background-color: #cc3f26;
+/*#428bca;*/
+    color: #fff;    
+}
+
+@supports (pointer-events: none) and
+      ((-webkit-appearance: none) or
+      (-moz-appearance: none) or
+      (appearance: none)) {
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .custom-dropdown__select {
+        padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
+        border: 0;
+        border-radius: 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;    
+    }
+
+    .custom-dropdown::before,
+    .custom-dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-dropdown::after { /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%; margin-top: -.5em;
+    }
+
+    .custom-dropdown::before { /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0; top: 0; bottom: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .custom-dropdown__select[disabled] {
+        color: rgba(0,0,0,.3);
+    }
+
+    .custom-dropdown.custom-dropdown--disabled::after {
+        color: rgba(0,0,0,.1);
+    }
+
+    /* Blue dropdown style */
+    .custom-dropdown--blue::before {
+        background-color: #cc3f26;
+/*#428bca;*/
+        border-left: 1px solid rgba(0,0,0,.1);
+    }
+
+    .custom-dropdown--blue::after {
+        color: rgba(0,0,0,.9);
+    }
+
+}
