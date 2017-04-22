@@ -8,12 +8,20 @@ Author URI: http://www.fastlinemedia.com
 template: bb-theme
 */
 
-/* Add your custom styles here... */ 
+
+
+/* ======== Add your custom styles here...====== */ 
 
 
 /* This gets rid of little search magnifying glasses on pages */
 .fa-search:before {
 	display: none;
+}
+
+
+/* This centers top search bar on search page for small devices */
+#search-form {
+    text-align: center;
 }
 
 /* This is even up the columns on search results page */
@@ -41,6 +49,12 @@ template: bb-theme
 }
 
 
+/* This hides Nav Button/Menu at top of pages */
+.fl-page-nav-wrap {
+    display: none;
+} 
+
+
 /* ======== End of Custom Styles ========* /
 
 /* ======== WP Advanced Search ========= */
@@ -58,6 +72,10 @@ template: bb-theme
 .wpas-search-field {
         /* padding-left: 15px; add this setting to larger screens only. */
         padding-bottom: 15px;
+}
+
+.wpas-text {
+    font-size: 20px;
 }
 
 /* ======== Custom Search Dropdown ======== */
@@ -157,6 +175,23 @@ template: bb-theme
         display: flex;
         justify-content: center;
     }
+}
+
+@media (min-width:1024px) {
+    #search-form {
+    display: flex;
+    justify-content: center;
+    }
+    
+    /*
+    .provider-result {
+	padding: .5em;
+	flex-wrap: nowrap;
+    }
+    .provider-result-video {
+        display: flex;
+        justify-content: center;
+    } */
 }
 
 

@@ -8,8 +8,7 @@ $search = new WP_Advanced_Search('my-form');
 
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div id="search-form" class="col-md-10 col-md-offset-1">
 
             <?php
             $temp = $wp_query;
@@ -19,7 +18,7 @@ $search = new WP_Advanced_Search('my-form');
             <?php $search->the_form(); ?>
 
         </div>
-        <div class="col-md-1"></div>
+        
 
         <div class="col-md-12">
             <h4 class="results-count">
