@@ -185,6 +185,14 @@ template: bb-theme
         justify-content: center;
     }
     
+    #search_query {
+        height: 42px;
+    }
+    
+    .wpas-submit {
+        height: 42px;
+    }
+    
     
    /* #search-form {
     display: flex;
