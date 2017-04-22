@@ -25,20 +25,22 @@ function my_search_form()
     $args['fields'][] = array('type' => 'taxonomy',
                             'taxonomy' => 'category',
 			    'format' => 'select',
-			    'pre_html' => '<div class=\'col-md-3\'><div class=\'form-group\'><span class=\'custom-dropdown custom-dropdown--blue\'>',   	    
+			    'pre_html' => '<div class=\'col-md-3 search-form-flex\'><div class=\'form-group\'><span class=\'custom-dropdown custom-dropdown--blue\'>',   	    
                 	    'class' => 'custom-dropdown__select custom-dropdown__select--blue',
 			    'post_html' => '</span></div></div>');
     $args['fields'][] = array('type' => 'search',
                             'title' => 'Search',
 			    'placeholder' => 'Enter City or Zip...',
-			    'pre_html' => '<div class=\'col-md-6\'>',
+			    'pre_html' => '<div class=\'col-md-6 search-form-flex\'>',
 		    	    'post_html' => '</div>');
     $args['fields'][] = array('type' => 'submit',
                             'class' => 'button',
                             'value' => 'Search',
-			    'pre_html' => '<div class=\'col-md-3\'>',
+			    'pre_html' => '<div class=\'col-md-3 search-form-flex\'>',
 		    	    'post_html' => '</div>');
     register_wpas_form('my-form', $args);
 }
 
 add_action('init', 'my_search_form');
+
+

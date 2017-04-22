@@ -178,12 +178,20 @@ template: bb-theme
 }
 
 @media (min-width:1024px) {
-    #search-form {
+    
+    
+    .search-form-flex {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+   /* #search-form {
     display: flex;
     justify-content: center;
     }
     
-    /*
+    
     .provider-result {
 	padding: .5em;
 	flex-wrap: nowrap;
