@@ -9,25 +9,22 @@ template: bb-theme
 */
 
 
-
-/* ======== Add your custom styles here...====== */ 
+/* ======== Add your custom styles here...====== */
 
 
 /* This gets rid of little search magnifying glasses on pages */
+
 .fa-search:before {
-	display: none;
+    display: none;
 }
 
-
 /* This centers top search bar on search page for small devices */
+
 #search-form {
     text-align: center;
 }
 
 /* This is even up the columns on search results page */
-.col-md-4 iframe {
-    /* margin-top: 15px; */
-}
 
 .provider-result {
     margin-bottom: 1.5em;
@@ -41,36 +38,31 @@ template: bb-theme
     justify-content: center;
 }
 
-
-
 .provider-result-excerpt {
     overflow: auto;
     word-wrap: break-word;
 }
 
-
 /* This hides Nav Button/Menu at top of pages */
+
 .fl-page-nav-wrap {
     display: none;
-} 
-
-
-
+}
 
 /* This changed placeholder text to color white */
+
 .wpas-search_query input[type="text"]::-webkit-input-placeholder {
- color: #e6e6e6;
-}
-.wpas-search_query input[type="text"]:-moz-placeholder { /* Firefox 18- */
- color: #e6e6e6;  
-}
-.wpas-search_query input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
- color: #e6e6e6;  
-}
-.wpas-search_query input[type="text"]:-ms-input-placeholder {  
- color: #e6e6e6;  
+    color: #e6e6e6;
 }
 
+.wpas-search_query input[type="text"]::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #e6e6e6;
+}
+
+.wpas-search_query input[type="text"]:-ms-input-placeholder {
+    color: #e6e6e6;
+}
 
 .wpas-submit.button {
     font-size: 16px;
@@ -80,24 +72,21 @@ template: bb-theme
     font-size: 16px;
 }
 
-
-/* ======== End of Custom Styles ========* /
-
 /* ======== WP Advanced Search ========= */
 
 .wp-advanced-search {
-	padding: 3%;
-	margin-bottom: 30px;
+    padding: 3%;
+    margin-bottom: 30px;
 }
 
 .results-count {
-	text-align: center;
-	margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .wpas-search-field {
-        /* padding-left: 15px; add this setting to larger screens only. */
-        padding-bottom: 15px;
+    /* padding-left: 15px; add this setting to larger screens only. */
+    padding-bottom: 15px;
 }
 
 .wpas-text {
@@ -114,88 +103,83 @@ template: bb-theme
     font-size: .7em;
 }
 
-.custom-dropdown__select{
-    font-size: inherit; /* inherit size from .custom-dropdown */
-    padding: .5em; /* add some space*/
-    margin: 0; /* remove default margins */
+.custom-dropdown__select {
+    font-size: inherit;
+    /* inherit size from .custom-dropdown */
+    padding: .5em;
+    /* add some space*/
+    margin: 0;
+    /* remove default margins */
 }
 
 .custom-dropdown__select--blue {
     background-color: #cc3f26;
-/*#428bca;*/
-    color: #fff;    
+    /*#428bca;*/
+    color: #fff;
 }
 
-@supports (pointer-events: none) and
-      ((-webkit-appearance: none) or
-      (-moz-appearance: none) or
-      (appearance: none)) {
-
+@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
     .custom-dropdown {
         position: relative;
         display: inline-block;
         vertical-align: middle;
     }
-
     .custom-dropdown__select {
-        padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
+        padding-right: 2.5em;
+        /* accommodate with the pseudo elements for the dropdown arrow */
         border: 0;
         border-radius: 5px;
         -webkit-appearance: none;
         -moz-appearance: none;
-        appearance: none;    
+        appearance: none;
     }
-
     .custom-dropdown::before,
     .custom-dropdown::after {
         content: "";
         position: absolute;
         pointer-events: none;
     }
-
-    .custom-dropdown::after { /*  Custom dropdown arrow */
+    .custom-dropdown::after {
+        /*  Custom dropdown arrow */
         content: "\25BC";
         height: 1em;
         font-size: .625em;
         line-height: 1;
         right: 1.2em;
-        top: 50%; margin-top: -.5em;
+        top: 50%;
+        margin-top: -.5em;
     }
-
-    .custom-dropdown::before { /*  Custom dropdown arrow cover */
+    .custom-dropdown::before {
+        /*  Custom dropdown arrow cover */
         width: 2em;
-        right: 0; top: 0; bottom: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         border-radius: 0 3px 3px 0;
     }
-
     .custom-dropdown__select[disabled] {
-        color: rgba(0,0,0,.3);
+        color: rgba(0, 0, 0, .3);
     }
-
     .custom-dropdown.custom-dropdown--disabled::after {
-        color: rgba(0,0,0,.1);
+        color: rgba(0, 0, 0, .1);
     }
-
     /* Blue dropdown style */
     .custom-dropdown--blue::before {
         background-color: #cc3f26;
-/*#428bca;*/
-        border-left: 1px solid rgba(0,0,0,.1);
+        /*#428bca;*/
+        border-left: 1px solid rgba(0, 0, 0, .1);
     }
-
     .custom-dropdown--blue::after {
-        color: rgba(0,0,0,.9);
+        color: rgba(0, 0, 0, .9);
     }
-
 }
-
 
 /* ========= Custom Media Queries - Responsive Design ========= */
 
 @media (min-width:768px) {
     .provider-result {
-	padding: .5em;
-	flex-wrap: nowrap;
+        padding: .5em;
+        flex-wrap: nowrap;
     }
     .provider-result-video {
         display: flex;
@@ -204,38 +188,16 @@ template: bb-theme
 }
 
 @media (min-width:1024px) {
-    
-    
     .search-form-flex {
         display: flex;
         justify-content: center;
     }
-    
     #search_query {
         height: 42px;
         width: 250px;
     }
-    
     .wpas-submit {
         height: 42px;
         width: 189px;
     }
-    
-    
-   /* #search-form {
-    display: flex;
-    justify-content: center;
-    }
-    
-    
-    .provider-result {
-	padding: .5em;
-	flex-wrap: nowrap;
-    }
-    .provider-result-video {
-        display: flex;
-        justify-content: center;
-    } */
 }
-
-
