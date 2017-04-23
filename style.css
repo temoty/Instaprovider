@@ -55,6 +55,32 @@ template: bb-theme
 } 
 
 
+
+
+/* This changed placeholder text to color white */
+.wpas-search_query input[type="text"]::-webkit-input-placeholder {
+ color: #e6e6e6;
+}
+.wpas-search_query input[type="text"]:-moz-placeholder { /* Firefox 18- */
+ color: #e6e6e6;  
+}
+.wpas-search_query input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+ color: #e6e6e6;  
+}
+.wpas-search_query input[type="text"]:-ms-input-placeholder {  
+ color: #e6e6e6;  
+}
+
+
+.wpas-submit.button {
+    font-size: 16px;
+}
+
+#search_query {
+    font-size: 16px;
+}
+
+
 /* ======== End of Custom Styles ========* /
 
 /* ======== WP Advanced Search ========= */
@@ -187,7 +213,7 @@ template: bb-theme
     
     #search_query {
         height: 42px;
-        width: 189px;
+        width: 250px;
     }
     
     .wpas-submit {
