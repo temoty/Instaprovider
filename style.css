@@ -44,11 +44,12 @@ template: bb-theme
 }
 
 
-/* This hides Nav Button/Menu at top of pages */
+/* This hides Nav Button Menu at top of pages */
 
-.fl-page-nav-wrap {
+.fl-page-nav {
     display: none;
 }
+ 
 
 /* This changed placeholder text to color white */
 
