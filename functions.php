@@ -25,6 +25,7 @@ function my_search_form()
     $args['fields'][] = array('type' => 'taxonomy',
                             'taxonomy' => 'category',
 			    'format' => 'select',
+                'default' => 'massage',
 			    'pre_html' => '<div class=\'col-md-3 search-form-flex\'><div class=\'form-group\'><span class=\'custom-dropdown custom-dropdown--blue\'>',   	    
                 	    'class' => 'custom-dropdown__select custom-dropdown__select--blue',
 			    'post_html' => '</span></div></div>');
