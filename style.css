@@ -49,8 +49,8 @@ template: bb-theme
 }
 
 
-/* This hides Nav Button/Menu at top of pages */
-.fl-page-nav-wrap {
+ /* This hides Nav Button Menu at top of pages */
+.fl-page-nav {
     display: none;
 } 
 
