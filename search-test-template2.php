@@ -33,18 +33,27 @@ $search = new WP_Advanced_Search('my-form');
                 <?php $post_type = get_post_type_object($post->post_type); ?>
         
         
-        
-       
-        
 
                 <div class="col-md-12 provider-result">
 		    <div class="col-sm-5 provider-result-video">
                 
 <?php                      
+        if (get_field( 'vimeo_id' ) ) : ?>
+    			<iframe src="https://player.vimeo.com/video/<?php the_field( 'vimeo_id' ); ?>?title=0&byline=0&portrait=0&badge=0" width="330" height="186" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>; <?php elseif (get_field( 'youtube_id' ) ) : ?>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'youtube_id' ); ?>" frameborder="0" allowfullscreen></iframe>
+<?php endif; ?>
+                
+                
+                
+<?php/*                      
         if (get_field( 'vimeo_id' ) ) : {
     			<iframe src="https://player.vimeo.com/video/<?php the_field( 'vimeo_id' ); ?>?title=0&byline=0&portrait=0&badge=0" width="330" height="186" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>; } elseif (get_field( 'youtube_id' ) ) : {
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J-RZpVC30zI" frameborder="0" allowfullscreen></iframe>; } ?>
-<?php endif; ?>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'youtube_id' ); ?>" frameborder="0" allowfullscreen></iframe>; } ?>
+<?php endif; */?>                
+                
+                
+                
+                
 </div>
 		    <div class="col-sm-7 provider-result-excerpt">
                     <article>
