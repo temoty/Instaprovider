@@ -31,11 +31,6 @@ $search = new WP_Advanced_Search('my-form');
 
             while (have_posts()) : the_post(); ?>
                 <?php $post_type = get_post_type_object($post->post_type); ?>
-        
-        
-        
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/J-RZpVC30zI" frameborder="0" allowfullscreen></iframe>
-        
 
                 <div class="col-md-12 provider-result">
 		    <div class="col-sm-5 provider-result-video">
