@@ -39,8 +39,8 @@ $search = new WP_Advanced_Search('my-form');
                 
 <?php                      
         if (get_field( 'vimeo_id' ) ) : ?>
-    			<iframe src="https://player.vimeo.com/video/<?php the_field( 'vimeo_id' ); ?>?title=0&byline=0&portrait=0&badge=0" width="330" height="186" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>; <?php elseif (get_field( 'youtube_id' ) ) : ?>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field( 'youtube_id' ); ?>" frameborder="0" allowfullscreen></iframe>
+    			<iframe src="https://player.vimeo.com/video/<?php the_field( 'vimeo_id' ); ?>?title=0&byline=0&portrait=0&badge=0" width="330" height="186" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <?php elseif (get_field( 'youtube_id' ) ) : ?>
+<iframe width="330" height="186" src="https://www.youtube.com/embed/<?php the_field( 'youtube_id' ); ?>" frameborder="0" allowfullscreen></iframe>
 <?php endif; ?>
                 
                 
