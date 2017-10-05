@@ -1,12 +1,5 @@
-<?php 
-/* Template Name: Provider Sign Up Form */
-?>
-
-<?php
-
-
-
-if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") { 
+<?php /* Template Name: Provider Sign Up Form */ ?>
+<?php if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") { 
 
     // Do some minor form validation to make sure there is content 
     if ($_POST['title'] != '') { 
@@ -63,66 +56,69 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
 
 //POST THE POST YO 
 do_action('wp_insert_post', 'wp_insert_post'); 
+?>
+<?php get_header(); ?>
+<div class="fl-content-full container">
+    <!--    <div id="container">-->
+    <div id="content" role="main">
 
-?> 
+        <!-- WINE RATING FORM -->
 
+        <div class="wpcf7">
+            <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form" enctype="multipart/form-data">
+                <!-- post name -->
+                <fieldset name="name">
+                    <label for="title">Wine Name:</label>
+                    <input type="text" id="title" value="" tabindex="5" name="title" />
+                </fieldset>
 
-        <div id="container"> 
-            <div id="content" role="main"> 
+                <!-- post Category -->
+                <fieldset class="category">
+                    <label for="cat">Type:</label>
+                    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=category&hide_empty=0' ); ?>
+                </fieldset>
 
-        <!-- WINE RATING FORM --> 
+                <!-- post Content -->
+                <fieldset class="content">
+                    <label for="description">Description and Notes:</label>
+                    <textarea id="description" tabindex="15" name="description" cols="80" rows="10"></textarea>
+                </fieldset>
 
-        <div class="wpcf7"> 
-        <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form" enctype="multipart/form-data"> 
-            <!-- post name --> 
-            <fieldset name="name"> 
-                <label for="title">Wine Name:</label> 
-                <input type="text" id="title" value="" tabindex="5" name="title" /> 
-            </fieldset> 
+                <!-- wine Rating -->
+                <fieldset class="winerating">
+                    <label for="winerating">Your Rating</label>
+                    <input type="text" value="" id="winerating" tabindex="20" name="winerating" />
+                </fieldset>
 
-            <!-- post Category --> 
-            <fieldset class="category"> 
-                <label for="cat">Type:</label> 
-                <?php wp_dropdown_categories( 'tab_index=10&taxonomy=category&hide_empty=0' ); ?> 
-            </fieldset> 
+                <!-- images -->
+                <fieldset class="images">
+                    <label for="bottle_front">Front of the Bottle</label>
+                    <input type="file" name="bottle_front" id="bottle_front" tabindex="25" />
+                </fieldset>
 
-            <!-- post Content --> 
-            <fieldset class="content"> 
-                <label for="description">Description and Notes:</label> 
-                <textarea id="description" tabindex="15" name="description" cols="80" rows="10"></textarea> 
-            </fieldset> 
+                <fieldset class="images">
+                    <label for="bottle_rear">Back of the Bottle</label>
+                    <input type="file" name="bottle_rear" id="bottle_rear" tabindex="30" />
+                </fieldset>
 
-            <!-- wine Rating --> 
-            <fieldset class="winerating"> 
-                <label for="winerating">Your Rating</label> 
-                <input type="text" value="" id="winerating" tabindex="20" name="winerating" /> 
-            </fieldset> 
+                <!-- post tags -->
+                <fieldset class="tags">
+                    <label for="post_tags">Additional Keywords (comma separated):</label>
+                    <input type="text" value="" tabindex="35" name="post_tags" id="post_tags" />
+                </fieldset>
 
-            <!-- images --> 
-            <fieldset class="images"> 
-                <label for="bottle_front">Front of the Bottle</label> 
-                <input type="file" name="bottle_front" id="bottle_front" tabindex="25" /> 
-            </fieldset> 
+                <fieldset class="submit">
+                    <input type="submit" value="Post Review" tabindex="40" id="submit" name="submit" />
+                </fieldset>
 
-            <fieldset class="images"> 
-                <label for="bottle_rear">Back of the Bottle</label> 
-                <input type="file" name="bottle_rear" id="bottle_rear" tabindex="30" /> 
-            </fieldset> 
+                <input type="hidden" name="action" value="new_post" />
+                <?php wp_nonce_field( 'new-post' ); ?>
+            </form>
+        </div>
+        <!-- END WPCF7 -->
 
-            <!-- post tags --> 
-            <fieldset class="tags"> 
-                <label for="post_tags">Additional Keywords (comma separated):</label> 
-                <input type="text" value="" tabindex="35" name="post_tags" id="post_tags" /> 
-            </fieldset> 
-
-            <fieldset class="submit"> 
-                <input type="submit" value="Post Review" tabindex="40" id="submit" name="submit" /> 
-            </fieldset> 
-
-            <input type="hidden" name="action" value="new_post" /> 
-            <?php wp_nonce_field( 'new-post' ); ?> 
-        </form> 
-        </div> <!-- END WPCF7 --> 
-
-            </div><!-- #content --> 
-        </div><!-- #container --> 
+    </div>
+    <!-- #content -->
+</div>
+<!-- #container -->
+<?php get_footer(); ?>
