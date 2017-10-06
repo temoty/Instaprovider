@@ -34,7 +34,7 @@
              //KEEPS OUR COMMA SEPARATED TAGS AS INDIVIDUAL 
     wp_set_post_tags($pid, $_POST['post_tags']); 
 
-    wp_redirect( 'http://www.google.com' ); 
+    wp_redirect( 'http://localhost:8888/Instaprovider/provider-sign-form-thank/' ); 
 
     //ADD OUR CUSTOM FIELDS 
     add_post_meta($pid, 'rating', $winerating, true);  
@@ -67,9 +67,10 @@ do_action('wp_insert_post', 'wp_insert_post');
         <div class="wpcf7">
             <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form" enctype="multipart/form-data">
                 <!-- post name -->
-                <fieldset name="name">
-                    <label for="title">Wine Name:</label>
-                    <input type="text" id="title" value="" tabindex="5" name="title" />
+                <!--<fieldset name="name">-->
+                <fieldset name="email">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" value="" tabindex="5" name="email" />
                 </fieldset>
 
                 <!-- post Category -->
