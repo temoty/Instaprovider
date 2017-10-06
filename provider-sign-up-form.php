@@ -4,12 +4,12 @@
     // Do some minor form validation to make sure there is content 
 //    if ($_POST['title'] != '') { 
 //        $title =  $_POST['title']; 
-    if ($_POST['name'] != '') { 
-          $title =  $_POST['name']; 
-    } else { 
-        echo 'Please enter your name';
-        return false;
-    } 
+//    if ($_POST['name'] != '') { 
+//          $title =  $_POST['name']; 
+//    } else { 
+//        echo 'Please enter your name';
+//        return false;
+//    } 
     if ($_POST['email'] != '') { 
           $email =  $_POST['email']; 
     } else { 
@@ -22,8 +22,8 @@
         echo 'Please enter some notes'; 
     } 
 
-    $tags = $_POST['post_tags']; 
-    $winerating = $_POST['winerating']; 
+    //$tags = $_POST['post_tags']; 
+    //$winerating = $_POST['winerating']; 
 
     // ADD THE FORM INPUT TO $new_post ARRAY 
     $new_post = array( 
@@ -32,7 +32,7 @@
     'post_category' =>   array($_POST['cat']),  // Usable for custom taxonomies too 
     'tags_input'    =>   array($tags), 
     'post_status'   =>   'publish',           // Choose: publish, preview, future, draft, etc. 
-//    'post_type' =>   'post',  //'post',page' or use a custom post type if you want to 
+//  'post_type' =>   'post',  //'post',page' or use a custom post type if you want to 
     'post_type' =>   'provider',  //'post',page' or use a custom post type if you want to 
 
     //'winerating'    =>   $winerating
@@ -50,7 +50,9 @@
     wp_redirect( 'http://localhost:8888/Instaprovider/provider-sign-form-thank/' ); 
 
     //ADD OUR CUSTOM FIELDS 
-    add_post_meta($pid, 'rating', $winerating, true);  
+//    add_post_meta($pid, 'rating', $winerating, 'email', $email, true); 
+    add_post_meta($pid, 'email', $email, true);  
+
 
     //INSERT OUR MEDIA ATTACHMENTS 
     
@@ -81,11 +83,12 @@ do_action('wp_insert_post', 'wp_insert_post');
         <div class="providersignup">
             <form id="new_post" name="new_post" method="post" action="" class="providerform" enctype="multipart/form-data">
                 <!-- post name -->
-                <!--<fieldset name="name">-->
+<!--
                 <fieldset name="name">
                     <label for="name">Name:</label>
                     <input type="text" id="name" value="" tabindex="5" name="name" />
                 </fieldset>
+-->
 
                 <fieldset name="email">
                     <label for="email">Email:</label>
