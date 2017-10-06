@@ -2,14 +2,22 @@
 <?php if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") { 
 
     // Do some minor form validation to make sure there is content 
-    if ($_POST['title'] != '') { 
-        $title =  $_POST['title']; 
+//    if ($_POST['title'] != '') { 
+//        $title =  $_POST['title']; 
+    if ($_POST['name'] != '') { 
+          $title =  $_POST['name']; 
     } else { 
-        echo 'Please enter the wine name'; 
+        echo 'Please enter your name';
+        return false;
+    } 
+    if ($_POST['email'] != '') { 
+          $email =  $_POST['email']; 
+    } else { 
+        echo 'Please enter your email';
         return false;
     } 
     if (isset ($_POST['description'])) { 
-        $description = $_POST['description']; 
+        $description = $_POST['description'];
     } else { 
         echo 'Please enter some notes'; 
     } 
@@ -19,17 +27,22 @@
 
     // ADD THE FORM INPUT TO $new_post ARRAY 
     $new_post = array( 
-    'post_title'    =>   $title, 
+    'post_title'    =>   $title,  
     'post_content'  =>   $description, 
     'post_category' =>   array($_POST['cat']),  // Usable for custom taxonomies too 
     'tags_input'    =>   array($tags), 
     'post_status'   =>   'publish',           // Choose: publish, preview, future, draft, etc. 
-    'post_type' =>   'post',  //'post',page' or use a custom post type if you want to 
-    'winerating'    =>   $winerating
+//    'post_type' =>   'post',  //'post',page' or use a custom post type if you want to 
+    'post_type' =>   'provider',  //'post',page' or use a custom post type if you want to 
+
+    //'winerating'    =>   $winerating
+    'email'         =>   $email
     ); 
 
     //SAVE THE POST 
-    $pid = wp_insert_post($new_post); 
+        $pid = wp_insert_post($new_post); 
+
+
 
              //KEEPS OUR COMMA SEPARATED TAGS AS INDIVIDUAL 
     wp_set_post_tags($pid, $_POST['post_tags']); 
@@ -64,10 +77,16 @@ do_action('wp_insert_post', 'wp_insert_post');
 
         <!-- WINE RATING FORM -->
 
-        <div class="wpcf7">
-            <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form" enctype="multipart/form-data">
+        <!--<div class="wpcf7">-->
+        <div class="providersignup">
+            <form id="new_post" name="new_post" method="post" action="" class="providerform" enctype="multipart/form-data">
                 <!-- post name -->
                 <!--<fieldset name="name">-->
+                <fieldset name="name">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="" tabindex="5" name="name" />
+                </fieldset>
+
                 <fieldset name="email">
                     <label for="email">Email:</label>
                     <input type="text" id="email" value="" tabindex="5" name="email" />
