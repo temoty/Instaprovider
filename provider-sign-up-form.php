@@ -34,7 +34,7 @@
              //KEEPS OUR COMMA SEPARATED TAGS AS INDIVIDUAL 
     wp_set_post_tags($pid, $_POST['post_tags']); 
 
-    wp_redirect( 'http://www.google.com' ); 
+    wp_redirect( 'https://instaprovider.com/provider-sign-form-thank/' ); 
 
     //ADD OUR CUSTOM FIELDS 
     add_post_meta($pid, 'rating', $winerating, true);  
