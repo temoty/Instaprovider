@@ -19,7 +19,8 @@ $tax_category_name = ($_GET["tax_category"]);
 if ( $tax_category_name == "massage" ) { 
 	echo "$tax_category_name " . "results" . FLTheme::title();
 } else {
-	echo FLTheme::title();
+	// echo FLTheme::title();
+	echo "cat";
 }
 
 
@@ -59,7 +60,7 @@ if ( $tax_category_name == "massage" ) {
 
 wp_head();
 
-FLTheme::head();
+// FLTheme::head();
 
 ?>
 </head>
