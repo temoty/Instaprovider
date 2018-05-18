@@ -8,20 +8,13 @@
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-
-
+<!-- <?php wp_title(); ?> -->
+<!-- <?php FLTheme::title(); ?> -->
 
 <?php
 
-$tax_category_exists = array_key_exists("tax_category", $_GET); 
-$tax_category_name = ($_GET["tax_category"]);
 
-if ( $tax_category_name == "massage" ) { 
-	echo "$tax_category_name " . "results" . FLTheme::title();
-} else {
-	// echo FLTheme::title();
-	echo "cat";
-}
+
 
 
 //   if (is_page_template( 'page-show.php' ) ) {
@@ -38,17 +31,24 @@ if ( $tax_category_name == "massage" ) {
 //    //content
 //  } 
 
-// EXAMPLE:
-// $string_one = '';
-// if ($string_one === 'cat'){
-//   echo 'yes, values match.';
-// } elseif ($string_one == "") {
-//   echo 'it\'s an empty string.';  
+// ThadCode
+// $tax_category_exists = array_key_exists("tax_category", $_GET); 
+// // $tax_category_name = ($_GET["tax_category"]);
+// $tax_category_name = $tax_category_exists ? $_GET["tax_category"] : "";
+
+
+// if ( $tax_category_name !== "" ) { 
+// 	echo "<title>$tax_category_name Providers</title>";
 // } else {
-//   echo 'no, values don\'t match.';
+// 	FLTheme::title();
+
 // }
 
+
 ?>
+
+
+
 
 <?php FLTheme::favicon(); ?>
 <?php FLTheme::fonts(); ?>
@@ -60,9 +60,15 @@ if ( $tax_category_name == "massage" ) {
 
 wp_head();
 
-// FLTheme::head();
+FLTheme::head();
 
 ?>
+
+
+
+
+
+
 </head>
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="https://schema.org/WebPage">
