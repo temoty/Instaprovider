@@ -7,7 +7,48 @@
 <?php echo apply_filters( 'fl_theme_xua_compatible', "<meta http-equiv='X-UA-Compatible' content='IE=edge' />\n" ); ?>
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php FLTheme::title(); ?>
+
+
+
+
+<?php
+
+$tax_category_exists = array_key_exists("tax_category", $_GET); 
+$tax_category_name = ($_GET["tax_category"]);
+
+if ( $tax_category_name == "massage" ) { 
+	echo "$tax_category_name " . "results" . FLTheme::title();
+} else {
+	echo FLTheme::title();
+}
+
+
+//   if (is_page_template( 'page-show.php' ) ) {
+//       echo "$show_name - " . wp_title( '|', false, 'right' ) . " Leicester";
+//   } else {
+//       echo wp_title( '|', false, 'right' ) . ' Leicester';
+//   }
+  
+
+// $slide = ($_GET["id"]);
+// then an if statement to display content based on parameter
+
+// <?php  if($slide == 'link1') { 
+//    //content
+//  } 
+
+// EXAMPLE:
+// $string_one = '';
+// if ($string_one === 'cat'){
+//   echo 'yes, values match.';
+// } elseif ($string_one == "") {
+//   echo 'it\'s an empty string.';  
+// } else {
+//   echo 'no, values don\'t match.';
+// }
+
+?>
+
 <?php FLTheme::favicon(); ?>
 <?php FLTheme::fonts(); ?>
 <!--[if lt IE 9]>
