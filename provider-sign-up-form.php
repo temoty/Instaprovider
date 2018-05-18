@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> feabead6122d4f65b16a416afa329bcfcd463f18
 <?php /* Template Name: Provider Sign Up Form */ ?>
 <?php if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") { 
 
@@ -125,9 +121,7 @@ do_action('wp_insert_post', 'wp_insert_post');
     <!-- #content -->
 </div>
 <!-- #container -->
-<<<<<<< HEAD
-=======
-=======
+
 <?php /* Template Name: Provider Sign Up Form */ ?>
 <?php if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") { 
 
@@ -274,6 +268,5 @@ do_action('wp_insert_post', 'wp_insert_post');
     <!-- #content -->
 </div>
 <!-- #container -->
->>>>>>> 71a4288ddbf2d6a9c0e878dc7f0ca26879498528
->>>>>>> feabead6122d4f65b16a416afa329bcfcd463f18
+
 <?php get_footer(); ?>
