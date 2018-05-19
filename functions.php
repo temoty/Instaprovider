@@ -81,4 +81,23 @@ function instaprovider_search_category_title( $title ) {
 
 }
 
+// Change Description Meta depending on Search Results
+add_filter( 'wpseo_metadesc', 'instaprovider_search_description_meta_tags', 10, 1 );
+function instaprovider_search_description_meta_tags ( $description ) {
+
+    //include specialty name and city in meta description tags
+    $tax_category_exists = array_key_exists('tax_category', $_GET);
+    $tax_category_name = $tax_category_exists ? $_GET['tax_category'] : '';
+
+    $search_query_exists = array_key_exists('search_query', $_GET);
+    $search_query_name = $search_query_exists ? $_GET['search_query'] : '';
+
+    if ( $search_query_name !== '' ) {
+        $description = ucwords( $tax_category_name ) . ' providers in ' . $search_query_name ;
+    }
+
+    return $description;
+
+}
+
 
