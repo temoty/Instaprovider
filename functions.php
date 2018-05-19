@@ -92,12 +92,12 @@ function instaprovider_search_description_meta_tags ( $description ) {
     $search_query_exists = array_key_exists('search_query', $_GET);
     $search_query_name = $search_query_exists ? $_GET['search_query'] : '';
 
-    if ( $search_query_name !== '' ) {
+    if ( $tax_category_name !== '' && $search_query_name !== ''  ) {
         $description = ucwords( $tax_category_name ) . ' providers in ' . $search_query_name ;
+    } else {
+        $description = ucwords( $tax_category_name ) . ' providers in Boston area. ';
+
     }
-
     return $description;
-
+    
 }
-
-
