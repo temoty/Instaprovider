@@ -8,10 +8,44 @@
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<!-- <?php wp_title(); ?> -->
-<!-- <?php FLTheme::title(); ?> -->
+
+<?php FLTheme::title(); ?>
 
 <?php
+
+
+// remove_theme_support( 'title-tag' );
+
+// function my_theme_fl_title( $title ) {
+//     return $title;
+// }
+// add_filter( 'fl_title', 'my_theme_fl_title' );
+
+// function _wp_render_title_tag($titl){
+//     $titl=str_replace('My old title','New title',$titl); 
+//     return $titl;
+// }
+
+// add_filter('wp_head','_wp_render_title_tag');
+// // _wp_render_title_tag('catz');
+
+
+
+// add_filter( 'wp_title', 'custom_title', 20 );
+
+// function custom_title( $title ) {
+//     return str_replace('My old title', 'New title', $title); 
+// }
+
+// function change_title() {
+//     echo '<title>catz</title>';
+// }
+// add_action('wp_head', 'change_title');
+
+
+
+
+
 
 
 

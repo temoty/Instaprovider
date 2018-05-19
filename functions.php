@@ -66,3 +66,19 @@ function my_search_form()
 add_action('init', 'my_search_form');
 
 
+//Change Title Tags depending on Search Results
+add_filter( 'wpseo_title', 'instaprovider_search_category_title', 10, 1 );
+function instaprovider_search_category_title( $title ) {
+
+    $tax_category_exists = array_key_exists('tax_category', $_GET);
+    $tax_category_name = $tax_category_exists ? $_GET['tax_category'] : '';
+
+    if ( $tax_category_name !== '' ) {
+        $title = ucwords( $tax_category_name ) . ' Providers - ' . get_bloginfo( 'name' );
+    }
+
+    return $title;
+
+}
+
+
