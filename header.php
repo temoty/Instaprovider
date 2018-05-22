@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-772269-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-772269-5');
+</script>
 <?php do_action( 'fl_head_open' ); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php echo apply_filters( 'fl_theme_viewport', "<meta name='viewport' content='width=device-width, initial-scale=1.0' />\n" ); ?>
@@ -11,75 +20,6 @@
 
 <?php FLTheme::title(); ?>
 
-<?php
-
-
-// remove_theme_support( 'title-tag' );
-
-// function my_theme_fl_title( $title ) {
-//     return $title;
-// }
-// add_filter( 'fl_title', 'my_theme_fl_title' );
-
-// function _wp_render_title_tag($titl){
-//     $titl=str_replace('My old title','New title',$titl); 
-//     return $titl;
-// }
-
-// add_filter('wp_head','_wp_render_title_tag');
-// // _wp_render_title_tag('catz');
-
-
-
-// add_filter( 'wp_title', 'custom_title', 20 );
-
-// function custom_title( $title ) {
-//     return str_replace('My old title', 'New title', $title); 
-// }
-
-// function change_title() {
-//     echo '<title>catz</title>';
-// }
-// add_action('wp_head', 'change_title');
-
-
-
-
-
-
-
-
-
-
-//   if (is_page_template( 'page-show.php' ) ) {
-//       echo "$show_name - " . wp_title( '|', false, 'right' ) . " Leicester";
-//   } else {
-//       echo wp_title( '|', false, 'right' ) . ' Leicester';
-//   }
-  
-
-// $slide = ($_GET["id"]);
-// then an if statement to display content based on parameter
-
-// <?php  if($slide == 'link1') { 
-//    //content
-//  } 
-
-// ThadCode
-// $tax_category_exists = array_key_exists("tax_category", $_GET); 
-// // $tax_category_name = ($_GET["tax_category"]);
-// $tax_category_name = $tax_category_exists ? $_GET["tax_category"] : "";
-
-
-// if ( $tax_category_name !== "" ) { 
-// 	echo "<title>$tax_category_name Providers</title>";
-// } else {
-// 	FLTheme::title();
-
-// }
-
-
-?>
 
 
 
