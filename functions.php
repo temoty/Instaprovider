@@ -36,13 +36,23 @@ add_action('fl_head', 'FLChildTheme::stylesheet');
 
 
 // Functions
+
+//WP Advanced Search - http://wpadvancedsearch.com/demos/
 function my_search_form()
 {
     $args = array();
 
 
     $args['wp_query'] = array('post_type' => 'provider',
-                            'posts_per_page' => 10);
+                            'type' => 'provider_per_page',
+                            'values' => array(2=>2, 5=>5, 10=>10),
+                            'posts_per_page' => 4);
+                          
+
+    // $args['wp_query'] = array('type' => 'posts_per_page',
+    //                         'values' => array(2=>2, 5=>5, 10=>10),
+    //                         'default' => 4);
+
     $args['fields'][] = array('type' => 'taxonomy',
                             'taxonomy' => 'category',
 			    'format' => 'select',

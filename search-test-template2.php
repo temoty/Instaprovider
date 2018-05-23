@@ -22,7 +22,7 @@ $search = new WP_Advanced_Search('my-form');
 
         <div class="col-md-12">
             <h4 class="results-count">
-                Displaying <?php echo $search->results_range(); ?> of <?php echo $wp_query->found_posts; ?> results
+                Displaying <?php echo $search->results_range( $args = array('marker' => '-') ); ?> of <?php echo $wp_query->found_posts; ?> results
             </h4>
         </div>
 
