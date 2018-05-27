@@ -71,6 +71,7 @@ $search = new WP_Advanced_Search('my-form');
                             </h4>
 
                             <?php the_excerpt(); ?>
+                            <a href="<?php the_permalink(); ?>">Learn More About <?php the_title(); ?></a>
                         </article>
                     </div>
 
