@@ -44,9 +44,9 @@ $search = new WP_Advanced_Search('my-form');
 ?>
 
                         <!-- Displaying <?php echo $search->results_range( $args = array('marker' => '-') ); ?> of <?php echo $wp_query->found_posts; ?> results in Boston Area -->
-                        Displaying
+                        <h1 class="search-results-heading">Displaying
                         <?php echo $wp_query->found_posts; str_repeat('&nbsp;', 3); ?>
-                        <?php echo $specialtyy; ?> results in Boston Area
+                        <?php echo $specialtyy; ?> results in Boston Area</h1>
 
                 </h4>
             </div>
