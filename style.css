@@ -19,6 +19,15 @@ a {
 }
 
 
+/* Footer Style */
+
+.fl-page-footer a,
+.fl-page-footer a *,
+.fl-page-footer a.fa {
+    color: #999999;
+}
+
+
 /* Style for Search Results Page Template */
 
 .search-results-heading {
